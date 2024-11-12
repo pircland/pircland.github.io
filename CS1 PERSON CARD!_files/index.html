@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://cdpn.io/cpe/boomboom/index.html?key=index.html-d8dc869b-b250-cddc-7d70-b1d4e974e5a5 -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/pircland/pen/dyxMaRa">
+
+  
+  
+
+  <style id="INLINE_PEN_STYLESHEET_ID">
+    
+/*/// FOR YOU TO DO://////
+
+1. CHANGE all #mollyJ TO #your 1st name and last initial and then change change the link in url() to a link of an _image_ of you or something that represents you. NOTE: To get a link to an image online, google search for the image and then you have to double finger click on the image and select the option to "copy image address." You cannot use a picture of yourself or someone else in for your person card. Sorry:( 
+
+2. Change the 
+////////////////////////////////////////
+*/
+
+.sidl {
+ background-image: url(https://upload.wikimedia.org/wikipedia/en/3/3d/Owainbutpivot.gif); 
+  
+}
+
+/*FOR YOU TO DO: add some hover effects!
+
+1. First change mollyK to your name and last initial (it should be the sam as your ID without the #)*/
+
+.sidhl-effect:hover {
+background-image:url(https://upload.wikimedia.org/wikipedia/en/3/3d/Owainbutpivot.gif); 
+  background-repeat:no-repeat;
+  background-size:cover;
+  
+}
+
+#sidl-name:hover{
+animation-name:expand; 
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+  transition:.5s ease-in-out;
+}
+
+
+/* BELOW THIS YOU'RE NOT CHANGING ANYTHING */
+.container {
+    width: 15vw;
+    margin: 1%;
+    text-align: center;
+    color: rgb(105, 105, 105);
+    font-size: 18px;
+    display: inline-block;
+  backface-visibility:hidden;
+  transition:2s ease-in-out;
+  border-radius:10%
+
+}
+
+
+.headshot {
+  backface-visibility: visible;
+  perspective: 1000;
+  background-color: rgba(245, 245, 245, 0.5);
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+  top: 0%;
+  left: 0%;
+  margin-bottom: 5%;
+  background-color: rgb(176, 176, 176);
+  border: 1px grey solid;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /*-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;*/
+  transition: 0.5s ease-in;
+}
+
+/*Below is the styling for a div with the class name of "your-name." It's is the div containing  the text of your name, which is underneath the headshot div. This is what you'll click on to show the description on the "back" of your card.*/
+
+.your-name {
+  background-color:red;
+  backface-visibility: visible;
+  z-index: 10;
+  position: relative;
+  top: 0%;
+  font-size: 2.5vw;
+  font-family: Quicksand, sans-serif;
+  color: rgb(105, 105, 105);
+}
+
+/*Below is a class with the name "description-invisible." The "description" is the class name I've given to a div which is the child of the headshot div. Even though it's right on top of the headshot div, we don't see it because it has an opacity of 0 and is invisible!*/
+
+.description-invisible {
+  z-index: -10;
+  opacity: 0;
+/*   transform: rotateY(0deg); */
+  transition: 0.5s ease-in-out;
+  font-family: Quicksand, sans-serif;
+  font-size: 1.25vw;
+  position: relative;
+  width: 100%;
+  height: 100%;
+/*   text-align: left; */
+}
+
+/*
+Below is the class name and styling we give to the description div when we click on the divs with the class "your-name."" It makes the description div visible by giving it an opacity of 1. It also obviously has other CSS properties which make the description div look similar to the headshot div. 
+*/
+.description-apparent {
+/*   pointer-events: none; */
+  transform:rotateY(180deg);
+  z-index: 12;
+  text-align: left;
+  perspective: 1000;
+  transition-delay: 0.5s;
+  transition: 0.1s ease-in;
+  transform: rotateY(-180deg);
+  font-family: Quicksand, sans-serif;
+  font-size: 1.25vw;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  animation-name: fadeToTransparent;
+  animation-duration: 8s;
+  background-color: rgb(176, 176, 176);
+  width: 95%;
+  height: 95%;
+  border-radius: 10%;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 2%;
+}
+
+/*Below are the properties of the animation that will fade divs with the "description-apparent" class back to being transparent with an opacity of 0. */
+
+@keyframes fadeToTransparent {
+  0% {
+    opacity: 1;
+    z-index: 1000;
+  }
+
+  50% {
+    opacity: 1;
+    z-index: 1000;
+  }
+
+  90% {
+    opacity: 1;
+    z-index: 1000;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+
+.headshot-flip {
+  text-align:right;
+/*     pointer-events: none; */
+  transform: rotateY(180deg);
+  z-index: -5;
+  width: 15vw;
+  height: 15vw;
+  background-color: rgba(245, 245, 245, 0.5);
+  background-image: url();
+  margin-bottom: 10%;
+  margin-right: 2%;
+  border-radius: 10%;
+  text-align: left;
+  z-index: -10;
+}
+
+  </style>
+
+  
+<script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+<script src="./iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+<script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+<script src="./iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  <!-- DIRECTIONS: 
+This grayed out text is "commented out" so it doesn't show up in your code! Please don't change this part!
+ 
+look for ///// because that indicates that there's stuff for you to do!
+
+BEFORE CHANGING ANY OF THE CODE, FORK THIS CARD. THERE'S AN OPTION ON THE LOWER RIGHT TO "FORK" IT. DO THAT! DO NOT EDIT THIS CODE DIRECTLY.
+
+In this panel (called HTML) and the panel to the right (called CSS) (but NOT the JS section) replace all the words "mollyJ' with your name and last initial. For instance, if your name is Cami Lax you would replace "mollyJ" with "camil". 
+
+Now, find all the words called "mollyK" and replace with your name and _middle_ initial 
+
+
+You'll see some code that begins with the tag <p>. That stands for "paragraph". Include a quote or something about yourself and a LINK to your github website. You can make that link by changing the "reference" (i.e. the "href") in the <a> tag (which stands for anchor link).
+
+
+<!-- DON'T CHANGE THIS -->
+<link href="./css" rel="stylesheet">
+
+<div class="container" onclick="showDescription()" animationend="hideDescription()" id="sidhl-name">
+  
+<div id="sidhl" class="sidl sidhl-effect headshot">
+  
+<div id="sidl-description" class="description headshot-flip description-invisible">
+<br>
+  <p class="description-apparent">whatever
+    <a href="https://c26ds.github.io/" class="headshot-flip">
+    
+    website
+    
+    </a></p>
+  
+
+</div>
+</div>
+julia a
+</div>
+
+  
+  <script src="./pen.js" crossorigin=""></script>
+
+
+</body></html>

@@ -1,37 +1,133 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<title>
-		
-	</title>
-</head>
-<body>
-<a href="journal.html">
-<div id="sun"></div>
+
 <style type="text/css">
-	#sun{
-		width:100px;
-		height:100px;
-		background-color:yellow;
-		border-radius:50%;
-		background-image:url(sun.jpg);
+
+.tastyalmonds{
+	width:100%;
+	height:100%;
+	background-position:center;
+	position:fixed;
+	background-repeat: no-repeat;
+	background-color:white;
+	background-size:contain;
+	display:inline-block;
+
+}
+
+.leaves{
+		width:400px;
+		height:200px;
 		background-position:center;
-		background-size:105%;
+/*		position:absolute;*/
+		background-image:url(goodleaf2.png);
+		background-size:contain;
+		display:inline-block;
+		background-repeat: no-repeat;
+/*		animation-name:fall;*/
+		position:relative;
+		animation-duration:7s;
+/	top:1000px;
 	}
-	#moon{
-		width:100px;
-		height:100px;
-		background-color:lightgrey;
-		border-radius:50%;
+
+	@keyframes fall{
+
+		0%{top:0px;
+			left:0px}
+		12.5%{top:50px;
+			left:100;}
+		25%{top:75px;
+			left:80px}
+		37.5%{top:100px;
+			left:120px}
+		50%{top:150px;
+			left:80px;}
+		62.5%{top:200px;
+			left:130px;}
+		75%{top:250px;
+			left:90px}
+		87.5%{top:300px;
+			left:125px;}
+		100%{top:375px;
+			left:80px;}
+	}
+	
+	body{
+		margin:0px;
+	}
+
+	#background{
+		width:100%;
+		height:1000px;
+	background-image:url(https://img.freepik.com/premium-photo/japanese-autumn-scenery-sunny-maple-forest-super-high-resolution_976492-8073.jpg);
+	background-size:cover;
 
 	}
+
 </style>
-</a>
-FREAKY
-<a href="projects.html">
-<div id="moon"></div>
-</a>
+
+
+
+</head>
+<body>
+
+<div id="background">
+<a href="projects.html"><div id="leaf0" class="leaves"></div></a>
+<a href="journal"><div id="leaf1" class="leaves"></div></a>
+<div id="leaf2" class="leaves"></div>
+<div id="leaf3" class="leaves"></div>
+<div id="leaf4"class="leaves"></div>
+<div id="leaf5" class="leaves"></div>
+
+</div>
+
+<script type="text/javascript">
+
+	var counter=0;
+	function count (){
+		counter=counter+1
+
+		if (counter==1){
+		leafFalling(1)
+
+	}
+
+	if (counter==3){
+		leafFalling(2)
+
+	}
+
+	 } //end of funciton
+
+	setInterval(count, 2000)
+
+	function leafFalling(x){
+		let whatever = document.getElementById("leaf"+x)
+		whatever.style.animationName = "fall"
+
+		function bottom (){
+			whatever.style.top = "375px"
+
+		}
+
+		setTimeout(bottom, 7000)
+
+	}
+
+	leafFalling(0)
+
+	
+
+	
+	// function leafFalling(){
+	// 	let leaves = document.getElementsByClassName("leaves");
+	// 	Array.from(leaves).forEach(function(element){
+	// 		element.style.animationName
+	// 	})
+	// }
+</script>
 
 </body>
 
 </html>
+
