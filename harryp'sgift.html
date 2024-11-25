@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		
+	.pics{
+
+		width:200px;
+		height:200px;
+		background-color:brown;
+		display:inline-block;
+		margin:5px;
+		background-size:contain;
+}
+		
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+let counter = 0;
+
+function makeHarryHairy (){
+	counter=counter+1
+
+let pic = document.createElement("div")
+document.body.appendChild(pic)
+pic.classList.add("pics")
+pic.style.backgroundimage="url("+1+".jpg)"
+}
+
+setInterval(makeHarryHairy, 1000)
+</script>
+
+</body>
+</html>

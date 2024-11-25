@@ -3,6 +3,16 @@
 <head>
 <style type="text/css">
 	body{background-color:black}
+
+	#circle{
+			position:relative;
+			background-color:red;
+			height:50px;
+			width:50px;
+			left:0px;
+			top:562px;
+			z-index: 1;
+		}
 	#ballpath1{
 		position:relative;
 		background-color:green;
@@ -10,6 +20,7 @@
 		width:350px;
 		left:0px;
 		top:500px;
+		z-index: 0;
 	}
 	#ballpath2{
 		position:relative;
@@ -17,7 +28,8 @@
 		height:425px;
 		width:75px;
 		left:350px;
-		top:150px;
+		top:75px;
+		z-index: 0;
 	}
 	#ballpath3{
 		position:relative;
@@ -25,47 +37,60 @@
 		height:75px;
 		width:150px;
 		left:425px;
-		top:150px;
+		top:-350px;
+		z-index: 0;
 	}
 	#ballpath4{
 		position:relative;
 		background-color:green;
 		height:175px;
 		width:75px;
-		left:565px;
-		top:142px;
+		left:575px;
+		top:-425px;
+		z-index: 0;
 	}
 	#ballpath5{
 		position:relative;
 		background-color:green;
 		height:75px;
 		width:600px;
-		left:565px;
-		top:140px;
+		left:575px;
+		top:-430px;
+		z-index: 0;
 	}
 	#ballpath6{
 		position:relative;
 		background-color:green;
 		height:325px;
 		width:75px;
-		left:1165px;
-		top:65px;
+		left:1175px;
+		top:-505px;
+		z-index: 0;
 	}
 	#ballpath7{
 		position:relative;
 		background-color:green;
 		height:75px;
-		width:300px;
-		left:1165px;
-		top:60px;
+		width:100px;
+		left:1175px;
+		top:-510px;
+		z-index: 0;
 	}
-		#circle{
-
-		}
-
+		
+@keyframes circle{
+	0%{top:562px;
+		left:0px;}
+	10%{top:350px;
+		left:75px;}
+	100%{
+		top:-600px;
+		left:1175px;
+	}
+}
 </style>
 </head>
 <body>
+<div id= "circle"></div>
 <div id= "ballpath1"></div>
 <div id= "ballpath2"></div>
 <div id= "ballpath3"></div>
@@ -73,6 +98,7 @@
 <div id= "ballpath5"></div>
 <div id= "ballpath6"></div>
 <div id= "ballpath7"></div>
+
 
 </body>
 </html>
