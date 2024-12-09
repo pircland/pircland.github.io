@@ -2,16 +2,34 @@
 <html>
 <head>
 <style type="text/css">
-	body{background-color:black}
+body{background-color:black}
+
+	#scaryyikes{
+		position:absolute;
+		background-repeat:no-repeat;
+		background-color:black;
+		background-size:cover;
+		height:150px;
+		width:150px;
+		left:480px;
+		top:250px;
+		z-index:2;
+		opacity:0;
+		background-image:url(data:image/jpeg;base64,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);
+	}
 
 	#circle{
 			position:relative;
 			background-color:red;
 			height:50px;
+			border-radius:50%;
 			width:50px;
 			left:0px;
 			top:562px;
 			z-index: 1;
+			animation-name:move;
+			animation-duration:20s ;
+			animation-iteration-count:1;
 		}
 	#ballpath1{
 		position:relative;
@@ -77,19 +95,30 @@
 		z-index: 0;
 	}
 		
-@keyframes circle{
+@keyframes move{ 
 	0%{top:562px;
 		left:0px;}
-	10%{top:350px;
-		left:75px;}
-	100%{
-		top:-600px;
-		left:1175px;
-	}
+	12.5%{top:562px;
+		left:360px;}
+	25%{top:210px;
+		left:360px;}
+	37.5%{top:210px;
+		left:585px;}
+	50%{top:380px;
+		left:585px;}
+	62.5%{top:380px;
+		left:1185px;}
+	75%{top:700px;
+		left:1185px;}
+	87.5%{top:700px;
+		left:1500px;}
+	100%{top:700px;
+		left:1500px;}
 }
 </style>
 </head>
 <body>
+<div id= "scaryyikes"></div>
 <div id= "circle"></div>
 <div id= "ballpath1"></div>
 <div id= "ballpath2"></div>
@@ -98,6 +127,33 @@
 <div id= "ballpath5"></div>
 <div id= "ballpath6"></div>
 <div id= "ballpath7"></div>
+
+<script type="text/javascript">
+	
+	function disappear(){
+		circle.style.opacity = "0";
+	}
+
+	setTimeout(disappear, 11000)
+
+	function appear (){
+				scaryyikes.style.opacity = "1";
+	}
+
+	setTimeout(appear, 11000)
+
+	let counter = 10;
+
+	function grow (){
+		counter=counter+0.1
+		scaryyikes.style.width = counter +"px"
+		scaryyikes.style.height = counter +"px"
+
+
+	}
+
+	setInterval(grow, 1)
+</script>
 
 
 </body>

@@ -7,10 +7,11 @@
 
 		width:200px;
 		height:200px;
-		background-color:brown;
+		background-color:white;
 		display:inline-block;
 		margin:5px;
 		background-size:contain;
+		background-repeat: no-repeat;
 }
 		
 	</style>
@@ -27,7 +28,7 @@ function makeHarryHairy (){
 let pic = document.createElement("div")
 document.body.appendChild(pic)
 pic.classList.add("pics")
-pic.style.backgroundimage="url("+1+".jpg)"
+pic.style.backgroundImage="url(./harry/"+counter+".jpg)"
 }
 
 setInterval(makeHarryHairy, 1000)
