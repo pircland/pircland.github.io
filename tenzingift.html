@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<audio id="tenzinsong" src="tenzinsong.m4a"></audio>
+	<div id="tenzin"></div>
+
+	
+<style type="text/css">
+	
+#tenzin{
+	width:500px;
+	height:500px;
+	background-image:tenzin.jpg;
+	background-size:contain;
+}
+
+</style>
+
+
+</head>
+<body>
+<script type="text/javascript">
+		
+		let counter = 0;
+
+		tenzin.addEventListener("click", function(){
+		counter=counter+1
+		if(counter%2==0) {
+		tenzinsong.pause()
+}
+		else if(counter%2==0){
+		tenzinsong.play()
+
+}
+
+		})
+
+
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<style type="text/css">
+
+#box1{
+	height:200px;
+	width:200px;
+	border:2px solid black;
+	display:inline-block;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+#box2{
+	height:200px;
+	width:200px;
+	border:2px solid black;
+	display:inline-block;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+#box3{
+	height:200px;
+	width:200px;
+	border:2px solid black;
+	display:inline-block;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#funtimeslever{
+	width:100px;
+	height:100px;
+	background-image:url(button.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	display:inline-block;
+}
+</style>
+
+</head>
+<body>
+<div id = "box1"></div>
+<div id = "box2"></div>
+<div id = "box3"></div>
+<div id = "funtimeslever"></div>
+
+<script type="text/javascript">
+	let dogimages = ["url(newt.jpg)", "url(hagdog.jpg)", "url(newtscousin.jpg)", "url(dogg.jpg)"]
+funtimeslever.addEventListener("click", function(){
+
+	let random1 = Math.floor(Math.random()*dogimages.length)
+	let random2 = Math.floor(Math.random()*dogimages.length)
+	let random3 = Math.floor(Math.random()*dogimages.length)
+
+	box1.style.backgroundImage = dogimages[random1]
+	box2.style.backgroundImage = dogimages[random2]
+	box3.style.backgroundImage = dogimages[random3]
+
+if(random1==random2&&random2==random3){
+	alert("Big supa newt the noseless win! Yippee!")
+}
+
+else if(random1==random2){
+	alert("Newt is disappointed")
+}
+
+else if(random2==random3){
+	alert("Newt is disappointed")
+}
+
+else if(random1==random3){
+	alert("Newt is disappointed")
+}
+
+})
+
+
+</script>
+
+</body>
+</html>
