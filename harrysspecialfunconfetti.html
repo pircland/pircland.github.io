@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+<style type="text/css">
+	.newtssprinkle{
+		background-color:powderblue;
+	}
+</style>
+
+<script type="text/javascript">
+function newtTime(){
+	let newtssprinkle = document.createElement("div")
+	document.body.appendChild(newtssprinkle)
+	newtssprinkle.classList.add("newtsconfetti")
+	newtssprinkle.style.height=Math.random()*10+"px"
+	newtssprinkle.style.width=Math.random()*10+"px"
+	newtssprinkle.style.top=Math.random()*10+"px"
+	newtssprinkle.style.left=Math.random()*1000+"px"
+
+	function letnewtsprinkle (){
+newtssprinkle.style.top=parseInt(newtssprinkle.style.top) + (Math.random()*100+"px")
+	}
+setInterval(letnewtsprinkle, 100)
+}
+
+for(let i=0; i<1000; i=i+1){
+	newtTime(i)
+}
+call letnewtsprinkle()
+</script>
+
+</body>
+</html>
