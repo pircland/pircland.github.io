@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.squareyes{
+			width:100px;
+			height:100px;
+			background-color:blue;
+			display:inline-block;
+
+		}
+
+	</style>
+</head>
+<body>
+<div class="squareyes" id="Adiosmiamigo"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+<div class="squareyes"></div>
+
+<script type="text/javascript">
+
+	let counter = 0
+	Adiosmiamigo.addEventListener("click",function(){
+		if(counter = 0){
+			Adiosmiamigo.style.backgroundColor = "white"
+			counter = 1;
+		}
+		else if(counter = 1){
+			Adiosmiamigo.style.backgroundColor = "pink"
+			counter = 2;
+		}
+		else if(counter = 2){
+			Adiosmiamigo.style.backgroundColor = "purple"
+			counter = 3;
+		}
+		else if(counter = 3){
+			Adiosmiamigo.style.backgroundColor = "lightblue"
+			counter = 4;
+		}
+		else if(counter = 4){
+			Adiosmiamigo.style.backgroundColor = "blue"
+			counter = 0;
+		}
+	})
+
+
+</script>
+
+</body>
+</html>
