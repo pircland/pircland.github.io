@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+    <style type="text/css">
+        .fishcatch {
+            width: 230px;
+            height: 180px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: skyblue;
+            opacity: 0;
+            transition: opacity 5s ease;
+            position: absolute;
+            background-image:url(fishcatch.png);
+            z-index: 101;
+        }
+
+        .visible {
+            opacity: 1; 
+        }
+
+        .beetlechain {
+            width: 150px;
+            height: 150px; 
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            z-index:100;
+            transition: width 0.1s, height 0.1s;
+        }
+        #ocean1{
+            width:1600px;
+            height:400px;
+            top:0px;
+            left:-50px;
+            background-color:skyblue;
+            position:absolute;
+            z-index:0;
+        }
+        #ocean2{
+            width:1600px;
+            height:400px;
+            top:300px;
+            left:-50px;
+            background-color:skyblue;
+            position:absolute;
+            z-index:0;
+        }
+        #player{
+/*          transition: 0.31s;*/
+            width:100px;
+            height:100px;
+            top:300px;
+            background-color: seagreen;
+            position: absolute;
+            z-index: 2;
+            border-radius:50%;
+        }
+        #board{
+            width:1650px;
+            height:200px;
+            top:250px;
+            left:-100px;
+            background-color:sandybrown;
+            position:absolute;
+            z-index:1;
+        }
+        #fish{
+            width:258px;
+            height:200px;
+            top:20px;
+            left:500px;
+            background-image:url(fish.png);
+            background-color:skyblue;
+            position:absolute;
+            z-index:3;
+        }
+        #fish1{
+            width:258px;
+            height:200px;
+            top:450px;
+            left:720px;
+            background-image:url(fish.png);
+            background-color:skyblue;
+            position:absolute;
+            z-index:3;
+        }
+        #fish2{
+            width:280px;
+            height:200px;
+            top:500px;
+            left:200px;
+            background-image:url(fish2.png);
+            background-color:skyblue;
+            position:absolute;
+            z-index:3;
+        }
+        #fishingrod{
+/*          transition:0.31s;*/
+            width:10px;
+            height:150px;
+            top:200px;
+            background-color:brown;
+            position:absolute;
+            z-index:3;
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+    <audio id="reelingin"src="fishingreel.mp3"></audio>
+    <div id="fish"></div>
+    <div id="fish1"></div>
+    <div id="fish2"></div>
+    <div class="fishing"id="fishingrod"></div>
+    <div class="fishing"id="player"></div>
+    <div id="ocean1"></div>
+    <div id="ocean2"></div>
+    <div class="fishcatch"></div>
+    <script type="text/javascript">
+
+player.style.left="0px"
+        
+        document.addEventListener("keydown", function(event){
+
+            if(event.keyCode==68){
+             player.style.left=parseInt(player.style.left)+4+"px"
+
+             }
+
+            if(event.keyCode==65){
+             player.style.left=parseInt(player.style.left)-4+"px"
+                        fishingrod.style.transition="0s"
+
+             }
+            if(event.keyCode==68){
+             fishingrod.style.left=parseInt(fishingrod.style.left)+4+"px"
+                        fishingrod.style.transition="0s"
+
+             }
+
+            if(event.keyCode==65){
+             fishingrod.style.left=parseInt(fishingrod.style.left)-4+"px"
+             }
+        })
+        fishingrod.style.left="100px"
+        
+        document.addEventListener("keydown", function(reel){
+            
+        if(event.keyCode==83){
+            fishingrod.style.opacity=100
+            fishingrod.style.transform="rotate(540deg)"
+            fishingrod.style.transition=".5s"
+            fishingrod.style.top= "350px"
+            reelingin.play()
+
+        }
+        if(event.keyCode==87){
+            fishingrod.style.opacity=100
+            fishingrod.style.top= "200px"
+            fishingrod.style.transition=".5s"
+            fishingrod.style.transform="rotate(360deg)"
+            reelingin.play()
+        }
+        }) 
+        
+        const fishcatch = document.querySelector('.fishcatch');
+        let beetlechainClicks = 0;
+        let beetlechainInterval;
+
+        function createBeetlechain() {
+            const beetlechain = document.createElement('div');
+            beetlechain.classList.add('beetlechain');
+            const randomLeft = Math.random() * window.innerWidth;
+            const randomTop = Math.random() * window.innerHeight;
+            beetlechain.style.left = `${randomLeft}px`;
+            beetlechain.style.top = `${randomTop}px`;
+            const initialLeft = randomLeft;
+            const initialTop = randomTop;
+            beetlechain.addEventListener('click', function() {
+                beetlechainClicks++;
+                beetlechain.style.opacity = 0;
+                if (beetlechainClicks >= 10) {
+                    fishcatch.classList.add('visible');
+                    beetlechainClicks = 0;
+                    setTimeout(function() {
+                        fishcatch.classList.remove('visible');
+                    }, 5000);
+                }
+            });
+
+            document.body.appendChild(beetlechain);
+
+            let size = 150;
+            const shrinkRate = 5;
+            const shrinkInterval = setInterval(function() {
+                if (size > 0) {
+                    size -= shrinkRate;
+                    beetlechain.style.width = `${size}px`;
+                    beetlechain.style.height = `${size}px`;
+                } else {
+                    beetlechain.style.opacity = 0;
+                    clearInterval(shrinkInterval);
+                }
+            }, 50);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode == 87 || event.keyCode == 83) {
+                if (!beetlechainInterval) {
+                    beetlechainInterval = setInterval(createBeetlechain, 1000);
+                }
+            }
+        });
+
+        setInterval(function() {
+            if (beetlechainClicks >= 10) {
+                fishcatch.classList.add('visible');
+                setTimeout(function() {
+                    fishcatch.classList.remove('visible');
+                }, 5000);
+                beetlechainClicks = 0; 
+            }
+        }, 100);
+    </script>
+</body>
+</html>

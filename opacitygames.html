@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<style type="text/css">
+  
+  .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Style for the button */
+.trigger {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Initial state for the div (invisible) */
+.fadeDiv {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+
+/* When the container is hovered, change the opacity */
+.container:hover .fadeDiv {
+  opacity: 1;
+}
+</style>
+
+  <div class="container">
+    <button class="trigger">Hover to Trigger Opacity Change</button>
+    <div class="fadeDiv"></div>
+  </div>
+</body>
+</html>

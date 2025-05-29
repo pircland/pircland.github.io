@@ -6,8 +6,9 @@
 <body>
 
 <style type="text/css">
-	.newtssprinkle{
+	.newtsconfetti{
 		background-color:powderblue;
+		position: absolute;
 	}
 </style>
 
@@ -16,21 +17,24 @@ function newtTime(){
 	let newtssprinkle = document.createElement("div")
 	document.body.appendChild(newtssprinkle)
 	newtssprinkle.classList.add("newtsconfetti")
-	newtssprinkle.style.height=Math.random()*10+"px"
-	newtssprinkle.style.width=Math.random()*10+"px"
-	newtssprinkle.style.top=Math.random()*10+"px"
-	newtssprinkle.style.left=Math.random()*1000+"px"
+	newtssprinkle.style.height=10+"px"
+	newtssprinkle.style.width=5+"px"
+	newtssprinkle.style.top=Math.random()*1+"px"
+	newtssprinkle.style.left=Math.random()*2000+"px"
 
 	function letnewtsprinkle (){
-newtssprinkle.style.top=parseInt(newtssprinkle.style.top) + (Math.random()*100+"px")
+		newtssprinkle.style.top=parseInt(newtssprinkle.style.top)+(Math.random()+"px")
 	}
-setInterval(letnewtsprinkle, 100)
-}
 
-for(let i=0; i<1000; i=i+1){
-	newtTime(i)
+
+setInterval(letnewtsprinkle, 200)
+
+
+} //end of newtime function// 
+
+for(let i=0; i<5000; i=i+1){
+	newtTime()
 }
-call letnewtsprinkle()
 </script>
 
 </body>

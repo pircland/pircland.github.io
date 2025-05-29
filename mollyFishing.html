@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	
+		#ocean1{
+			width:1600px;
+			height:400px;
+			top:0px;
+			left:-50px;
+			background-color:skyblue;
+			position:absolute;
+			z-index:0;
+		}
+		#ocean2{
+			width:1600px;
+			height:400px;
+			top:300px;
+			left:-50px;
+			background-color:skyblue;
+			position:absolute;
+			z-index:0;
+		}
+		#player{
+			width:100px;
+			height:100px;
+			top:300px;
+			background-color: seagreen;
+			position: absolute;
+			z-index: 2;
+			border-radius:50%;
+		}
+		#boardwalk{
+			width:1650px;
+			height:200px;
+			top:250px;
+			left:-100px;
+			background-color:sandybrown;
+			position:absolute;
+			z-index:1;
+		}
+		#fish{
+			width:258px;
+			height:200px;
+			top:20px;
+			left:500px;
+			background-image:url(fish.png);
+			background-color:skyblue;
+			position:relative;
+			z-index:3;
+		}
+		#fish1{
+			width:258px;
+			height:200px;
+			top:500px;
+			left:320px;
+			background-image:url(fish.png);
+			background-color:skyblue;
+			position:relative;
+			z-index:3;
+		}
+		#fish2{
+			width:280px;
+			height:200px;
+			top:500px;
+			left:200px;
+			background-image:url(fish2.png);
+			background-color:skyblue;
+			position:absolute;
+			z-index:3;
+		}
+		#fishingrod{
+			width:10px;
+			height:150px;
+			top:200px;
+			background-color:brown;
+			position:absolute;
+			z-index:3;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div class="fishing"id="player"></div>
+	<div id="boardwalk"></div>
+	<div id="fish"></div>
+	<div id="fish1"></div>
+	<div id="fish2"></div>
+	<div class="fishing"id="fishingrod"></div>
+	<div id="ocean1"></div>
+	<div id="ocean2"></div>
+	<script type="text/javascript">
+
+
+		player.style.left="0px"
+		
+		document.addEventListener("keydown", function(event){
+
+			if(event.keyCode==68){
+			 player.style.left=parseInt(player.style.left)+10+"px"
+			 }
+
+			if(event.keyCode==65){
+			 player.style.left=parseInt(player.style.left)-10+"px"
+			 }
+
+		})
+		fishingrod.style.left="100px"
+		
+		document.addEventListener("keydown", function(event){
+
+			if(event.keyCode==68){
+			 fishingrod.style.left=parseInt(fishingrod.style.left)+10+"px"
+			 }
+
+			if(event.keyCode==65){
+			 fishingrod.style.left=parseInt(fishingrod.style.left)-10+"px"
+			 }
+
+		})
+
+		// function sayHi(){
+
+		// }
+
+		// sayHi()
+	</script>
+
+</body>
+</html>
